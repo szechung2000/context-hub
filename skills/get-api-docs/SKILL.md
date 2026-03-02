@@ -25,10 +25,10 @@ Pick the best-matching `id` from the results (e.g. `openai/chat`, `anthropic/sdk
 ## Step 2 — Fetch the docs
 
 ```bash
-chub get docs <id> --lang py    # or --lang js, --lang ts
+chub get <id> --lang py    # or --lang js, --lang ts
 ```
 
-Omit `--lang` if the doc has no language variants.
+Omit `--lang` if the doc has only one language variant — it will be auto-selected.
 
 ## Step 3 — Use the docs
 
@@ -39,15 +39,17 @@ Do not rely on memorized API shapes — use what the docs say.
 
 | Goal | Command |
 |------|---------|
+| List everything | `chub search` |
 | Find a doc | `chub search "stripe"` |
-| Find exact id | `chub search "stripe/api"` |
-| Fetch Python docs | `chub get docs stripe/api --lang py` |
-| Fetch JS docs | `chub get docs openai/chat --lang js` |
-| Save to file | `chub get docs anthropic/sdk --lang py -o docs.md` |
-| Fetch multiple | `chub get docs openai/chat stripe/api --lang py` |
+| Exact id detail | `chub search stripe/api` |
+| Fetch Python docs | `chub get stripe/api --lang py` |
+| Fetch JS docs | `chub get openai/chat --lang js` |
+| Save to file | `chub get anthropic/sdk --lang py -o docs.md` |
+| Fetch multiple | `chub get openai/chat stripe/api --lang py` |
 
 ## Notes
 
+- `chub get` auto-detects whether an ID is a doc or skill — no subcommand needed
 - `chub search` with no query lists everything available
-- IDs are `<author>/<name>` — always confirm the ID from search before fetching
-- If the user specifies a language, pass it with `--lang`; otherwise omit it
+- IDs are `<author>/<name>` — confirm the ID from search before fetching
+- If multiple languages exist and you don't pass `--lang`, chub will tell you which are available
