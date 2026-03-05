@@ -8,7 +8,7 @@ const DEFAULT_TELEMETRY_URL = 'https://api.aichub.org/v1';
 
 const DEFAULTS = {
   output_dir: '.context',
-  refresh_interval: 86400,
+  refresh_interval: 21600,
   output_format: 'human',
   source: 'official,maintainer,community',
   telemetry: true,

@@ -35,6 +35,33 @@ Omit `--lang` if the doc has only one language variant — it will be auto-selec
 Read the fetched content and use it to write accurate code or answer the question.
 Do not rely on memorized API shapes — use what the docs say.
 
+## Step 4 — Annotate what you learned
+
+After completing the task, if you discovered something not in the doc — a gotcha,
+workaround, version quirk, or project-specific detail — save it so future sessions
+start smarter:
+
+```bash
+chub annotate <id> "Webhook verification requires raw body — do not parse before verifying"
+```
+
+Annotations are local, persist across sessions, and appear automatically on future
+`chub get` calls. Keep notes concise and actionable. Don't repeat what's already in
+the doc.
+
+## Step 5 — Give feedback
+
+Rate the doc so authors can improve it. Ask the user before sending.
+
+```bash
+chub feedback <id> up                        # doc worked well
+chub feedback <id> down --label outdated     # doc needs updating
+```
+
+Available labels: `outdated`, `inaccurate`, `incomplete`, `wrong-examples`,
+`wrong-version`, `poorly-structured`, `accurate`, `well-structured`, `helpful`,
+`good-examples`.
+
 ## Quick reference
 
 | Goal | Command |
@@ -46,6 +73,9 @@ Do not rely on memorized API shapes — use what the docs say.
 | Fetch JS docs | `chub get openai/chat --lang js` |
 | Save to file | `chub get anthropic/sdk --lang py -o docs.md` |
 | Fetch multiple | `chub get openai/chat stripe/api --lang py` |
+| Save a note | `chub annotate stripe/api "needs raw body"` |
+| List notes | `chub annotate --list` |
+| Rate a doc | `chub feedback stripe/api up` |
 
 ## Notes
 

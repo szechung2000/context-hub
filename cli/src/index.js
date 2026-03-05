@@ -34,10 +34,25 @@ ${chalk.bold.underline('Getting Started')}
   ${chalk.dim('$')} chub get pw-community/login-flows          ${chalk.dim('# fetch a skill')}
   ${chalk.dim('$')} chub get openai/chat stripe/api            ${chalk.dim('# fetch multiple')}
 
+${chalk.bold.underline('Learn & Improve')}
+
+  After using a doc, save what you learned so future sessions start smarter:
+
+  ${chalk.dim('$')} chub annotate stripe/api "Webhook needs raw body"   ${chalk.dim('# persists across sessions')}
+  ${chalk.dim('$')} chub annotate --list                                 ${chalk.dim('# see all saved notes')}
+  ${chalk.dim('$')} chub annotate stripe/api --clear                     ${chalk.dim('# remove a note')}
+
+  Rate docs so authors can improve them (ask the user before sending):
+
+  ${chalk.dim('$')} chub feedback stripe/api up                          ${chalk.dim('# worked well')}
+  ${chalk.dim('$')} chub feedback stripe/api down --label outdated       ${chalk.dim('# needs updating')}
+
 ${chalk.bold.underline('Commands')}
 
   ${chalk.bold('search')} [query]              Search docs and skills (no query = list all)
   ${chalk.bold('get')} <ids...>                 Fetch docs or skills by ID
+  ${chalk.bold('annotate')} [id] [note]        Save a note — appears on future fetches
+  ${chalk.bold('feedback')} <id> <up|down>     Rate a doc (helps authors improve it)
   ${chalk.bold('update')}                      Refresh the cached registry
   ${chalk.bold('cache')} status|clear          Manage the local cache
   ${chalk.bold('build')} <content-dir>        Build registry from content directory

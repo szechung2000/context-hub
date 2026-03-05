@@ -42,12 +42,9 @@ chub get openai/chat-api --lang py   # Python variant
 chub get stripe/api --lang js        # JavaScript variant
 ```
 
-**Skills** — Task recipes, automation patterns, coding playbooks. Shareable across teams so every agent follows the same proven approach. "How to do it."
-```bash
-chub get pw-community/login-flows    # fetch a skill
-```
+**Skills** — Task recipes and coding playbooks. A growing area — [contribute yours](docs/content-guide.md).
 
-Both are markdown with YAML frontmatter, following the [Agent Skills](https://agentskills.io) open standard — compatible with Claude Code, Cursor, Codex, and other AI tools.
+All content is markdown with YAML frontmatter, following the [Agent Skills](https://agentskills.io) open standard — compatible with Claude Code, Cursor, Codex, and other AI tools.
 
 ## Commands
 
