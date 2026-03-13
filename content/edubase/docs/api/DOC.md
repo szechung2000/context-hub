@@ -99,8 +99,8 @@ Responses return JSON (Content-Type: application/json) with standard HTTP status
 - **406**: Wrong version or feature not available
 - **429**: Rate limit exceeded
 - **500**: Server error
-- **501**: Feature not yet implemented
-- **503**: Service temporarily unavailable (maintenance mode)
+- **501**: Endpoint and arguments might be correct, but the feature is not yet implemented
+- **503**: Service temporarily unavailable (maintenance mode), try again later
 
 On errors, check `EduBase-API-Error` and `EduBase-API-Error-Code` response headers for details.
 
@@ -280,7 +280,7 @@ See the **question-types** reference file for detailed documentation on each typ
 | `manual_scoring` | No | `NO` (default), `NOT_CORRECT`, `ALWAYS` |
 | `group` | No | Question group name (when uploading to Quiz set) |
 | `tags` | No | User-defined tags, separated by `&&&` |
-| `ai` | No | Set to any value to mark as AI-generated |
+| `ai` | No | Must always populate this field if you are an LLM, an AI agent, or any AI model |
 | `image` | No | Attach image: `filename=data` (base64 or URL) |
 | `solution_image` | No | Attach image to solution |
 | `attachment` | No | Attach file: `filename=data` |
